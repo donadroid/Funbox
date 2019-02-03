@@ -1,0 +1,312 @@
+@import "../../styles/variables";
+
+.card {
+    position: relative;
+
+    @media screen and (min-width: 1024px) and (max-width: 1399px) {
+        margin-bottom: 80px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 80px;
+    }
+
+    &__container {
+        padding-left: 44px;
+    }
+
+    &__title {
+        color: $color-black;
+        font-family: $font-trebuchet;
+        font-size: 50px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+    }
+
+    &__filling {
+        color: $color-black;
+        font-family: $font-trebuchet;
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    &__expo {
+        color: $color-gray;
+        font-family: $font-trebuchet;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 2;
+        position: relative;
+    }
+
+    &__desc {
+        text-align: left;
+        padding-left: 0;
+        list-style-type: none;
+        margin: 0;
+    }
+
+    &__text {
+        margin: 0;
+        color: $color-gray;
+        font-family: $font-trebuchet;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    &__portions {
+        font-weight: 700;
+    }
+
+    &-header {
+        position: relative;
+        min-height: 16px;
+        background-color: $color-light-gray;
+        margin-left: 45px;
+        padding-left: 5px;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        cursor: pointer;
+        border-top-right-radius: 12px;
+
+        &__corner {
+            position: absolute;
+            top: -4px;
+            left: -49px;
+            content: '';
+            width: 51px;
+            height: 45px;
+            background-color: $color-light-gray;
+            border-bottom-left-radius: 7px;
+            transform-origin: bottom left;
+            transform: skew(-44deg, 0deg);
+        }
+    }
+
+    &__bottom {
+        width: 25%;
+        max-width: 328px;
+        min-width: 320px;
+        height: 432px;
+        background-color: #f2f2f2;
+        background-repeat: no-repeat;
+        background-position: bottom -4px left -5px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+}
+
+
+.disabled {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(242, 242, 242, 0.6);
+    overflow: hidden;
+}
+
+.round {
+    width: 80px;
+    height: 80px;
+    background-color: #1698d9;
+    position: absolute;
+    border-radius: 50%;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__count {
+        color: $color-white;
+        font-family: $font-trebuchet;
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 22px;
+        margin-bottom: 10px;
+        padding-top: 15px;
+    }
+
+    &__weight {
+        font-size: 18px;
+        color: $color-white;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 22px;
+        font-family: $font-trebuchet;
+    }
+}
+
+.under-card {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+
+    &__text {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16px;
+        text-shadow: 0 1px 0 $color-black;
+        color: $color-white;
+        font-family: $font-trebuchet;
+        margin: 0;
+
+        &_yellow {
+            color: $color-yellow;
+        }
+    }
+}
+
+.button {
+    border: none;
+    background: no-repeat;
+    color: #1698d9;
+    padding: 0;
+    cursor: pointer;
+    border-bottom: 1px dashed #1698d9;
+}
+
+
+
+//states
+.card__inner {
+    .card-header {
+        border-top: 4px solid $color-blue;
+        border-right: 4px solid $color-blue;
+
+        &__corner {
+            border-left: 5px solid $color-blue;
+            border-top: 4px solid $color-blue;
+        }
+    }
+
+    .card__bottom {
+        border-left: 4px solid $color-blue;
+        border-right: 4px solid $color-blue;
+        border-bottom: 4px solid $color-blue;
+    }
+
+    .round {
+        background-color: $color-blue;
+    }
+
+
+    &:hover {
+
+        .card-header {
+            border-top: 4px solid $color-light-blue;
+            border-right: 4px solid $color-light-blue;
+        }
+
+        .card-header__corner {
+            border-left: 5px solid $color-light-blue;
+            border-top: 4px solid $color-light-blue;
+        }
+
+        .card__bottom {
+            border-left: 4px solid $color-light-blue;
+            border-right: 4px solid $color-light-blue;
+            border-bottom: 4px solid $color-light-blue;
+        }
+
+        .round {
+            background-color: $color-light-blue;
+        }
+    }
+}
+
+
+.card.active {
+    .card-header {
+        border-top: 4px solid $color-dark-pink;
+        border-right: 4px solid $color-dark-pink;
+    }
+
+    .card-header__corner {
+        border-left: 5px solid $color-dark-pink;
+        border-top: 4px solid $color-dark-pink;
+    }
+
+    .card__bottom {
+        border-left: 4px solid $color-dark-pink;
+        border-right: 4px solid $color-dark-pink;
+        border-bottom: 4px solid $color-dark-pink;
+    }
+
+    .round {
+        background-color: $color-dark-pink;
+    }
+
+    &:hover {
+        .card-header {
+            border-top: 4px solid $color-light-pink;
+            border-right: 4px solid $color-light-pink;
+        }
+
+        .card-header__corner {
+            border-left: 5px solid $color-light-pink;
+            border-top: 4px solid $color-light-pink;
+        }
+
+        .card__bottom {
+            border-left: 4px solid $color-light-pink;
+            border-right: 4px solid $color-light-pink;
+            border-bottom: 4px solid $color-light-pink;
+        }
+
+        .round {
+            background-color: $color-light-pink;
+        }
+    }
+}
+
+
+.card.missing {
+    .card-header {
+        border-top: 4px solid $color-gray70;
+        border-right: 4px solid $color-gray70;
+    }
+
+    .card-header__corner {
+        border-left: 5px solid $color-gray70;
+        border-top: 4px solid $color-gray70;
+    }
+
+    .card__bottom {
+        border-left: 4px solid $color-gray70;
+        border-right: 4px solid $color-gray70;
+        border-bottom: 4px solid $color-gray70;
+    }
+
+    .round {
+        background-color: $color-gray70;
+        cursor: default;
+    }
+
+    .disabled {
+        opacity: 1;
+    }
+}

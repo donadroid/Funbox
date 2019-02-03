@@ -1,0 +1,16 @@
+.cards {
+    display: flex;
+    width: 100%;
+    max-width: 1920px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 90%;
+    }
+}

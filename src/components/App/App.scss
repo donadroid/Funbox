@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+  }
+
+  &__title {
+    text-shadow: 0 1px 0 $color-black;
+    font-family: $font-exo;
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 23px;
+    color: $color-white;
+
+    @media screen and (max-width: 767px) {
+      font-size: 26px;
+      text-align: center;
+      padding-top: 30px;
+    }
+  }
+}
