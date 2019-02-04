@@ -3,6 +3,7 @@ import './App.scss';
 import Cards from '../Cards'
 
 
+
 const data = [
   {
     name: 'Нямушка',
